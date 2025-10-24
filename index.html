@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Para mi Humana Favorita</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa-fuerte: #E63946;
+    --rosa-claro: #F1FAEE;
+    --crema: #FFF9E8;
+    --texto:#2b2b2b;
+    --sombra:0 10px 30px rgba(0,0,0,.15);
+  }
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans", sans-serif;
+    background:linear-gradient(180deg,#fff, var(--rosa-claro));
+    color:var(--texto);
+    overflow-x:hidden;
+  }
+
+  /* --- Emojis cayendo --- */
+  .flores{ position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; }
+  .flor{ position:absolute; top:-10%; font-size:24px; animation: caer linear infinite; opacity:0.8; }
+  @keyframes caer{
+    0%{ transform:translateY(-10%) rotate(0deg); opacity:1; }
+    100%{ transform:translateY(110vh) rotate(360deg); opacity:0.5; }
+  }
+
+  /* --- Tarjeta central --- */
+  .tarjeta{
+    max-width:900px; margin:3rem auto; background:#fffdfade;
+    border:1px solid rgba(230, 57, 70, .25); border-radius:24px; padding:2rem;
+    box-shadow:var(--sombra); text-align:center;
+    animation: pulse 2.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+  h1{
+    font-family:"Great Vibes", cursive; font-size:3.5rem;
+    background: linear-gradient(90deg, #FF69B4, var(--rosa-fuerte), #FF69B4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-size:200% auto; animation: brillo 5s linear infinite; margin:0;
+  }
+  @keyframes brillo{ 0%{background-position:0%} 50%{background-position:100%} 100%{background-position:0%} }
+
+  .sub{color:#555; margin-top:.5rem; font-size: 1.1rem; font-weight: 600;}
+  .mensaje{ margin:2rem 0; font-size:1.2rem; line-height:1.7; min-height:150px; }
+
+  /* --- (NUEVO) Estilos para los botones --- */
+  .botones-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(230, 57, 70, .25);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Para móviles */
+  }
+  .botones-container button {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1.5rem; /* Símbolos más grandes */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--rosa-fuerte);
+    background: #fff;
+    color: var(--rosa-fuerte);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  }
+  .botones-container button:hover {
+    background: var(--rosa-fuerte);
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,.15);
+  }
+  /* --- Fin de nuevos estilos --- */
+
+  footer{text-align:center; margin:2rem 0; color:var(--rosa-fuerte); font-size:.9rem;}
+</style>
+</head>
+<body>
+  <div class="flores" id="flores"></div>
+
+  <main>
+    <section class="tarjeta">
+      <h1 id="titulo">Mi Amor en Debug 🐞</h1>
+      
+      <div class="sub" id="subtitulo">Eres el <strong>;</strong> (punto y coma) que le faltaba a mi código.</div>
+
+      <div class="mensaje" id="mensaje">
+        <p>Mi amor por ti es como un <strong>while(true)</strong>... ¡simplemente no termina!</p>
+        <p>Eres mi <strong>Error 404</strong>: Imposible de encontrar... ¡pero por suerte te encontré! 😍</p>
+        <p>Contigo, mi corazón no necesita <strong>// Comentarios</strong>, todo es claro y funcional.</p>
+        <p>Gracias por compilar mi vida y hacerla perfecta. <strong>¡Te amo!</strong> ❤️</p>
+      </div>
+
+      <div class="botones-container">
+        <button id="btn1">💖</button>
+        <button id="btn2">🤔</button>
+        <button id="btn3">🔥</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    Hecho por Christian · 2025
+  </footer>
+
+  <audio id="musica" loop autoplay>
+    <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/There%20is%20Romance.mp3" type="audio/mpeg">
+    <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Heartwarming.mp3" type="audio/mpeg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio HTML5.
+  </audio>
+
+<script>
+  // --- Script de Emojis Cayendo ---
+  const contenedor = document.getElementById("flores");
+  const emojis = ["🌸","💖","❤️","🌷","🍓","🥰", "✨", "💻", "😍"];
+  for(let i=0;i<60;i++){
+    const span=document.createElement("span");
+    span.className="flor";
+    span.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    span.style.left=Math.random()*100+"vw";
+    span.style.fontSize=(18+Math.random()*36)+"px";
+    span.style.animationDuration=(6+Math.random()*10)+"s";
+    span.style.animationDelay=Math.random()*8+"s";
+    contenedor.appendChild(span);
+  }
+  
+  // --- (NUEVO) Script de Botones Sorpresa ---
+  const btn1 = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+  const btn3 = document.getElementById("btn3");
+
+  btn1.addEventListener("click", () => {
+    alert("¡Alerta de Amor!\n\nSe ha detectado un nivel de 'Te Quiero' superior al 9000%.\n\n(Eres lo mejor que me ha pasado. 🥰)");
+  });
+
+  btn2.addEventListener("click", () => {
+    alert("Dato Curioso (y un poco nerd):\n\n¿Sabes por qué los programadores confunden Halloween con Navidad?\n\nPorque OCT 31 = DEC 25.\n\n... ¡Casi tan perfecto como nuestro 'match'!");
+  });
+
+  btn3.addEventListener("click", () => {
+    alert("¡¡ADVERTENCIA DE SEGURIDAD!!\n\nHas activado el 'firewall' de mi corazón...\n\n... ¡pero tú tienes acceso de 'root' (súper administradora) para hacer lo que quieras! 🔥😉");
+  });
+</script>
+</body>
+</html>
