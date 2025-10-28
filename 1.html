@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Para mi Amor Bonito</title>
+<title>Para mi Humana Favorita</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -54,7 +54,7 @@
   .sub{color:#555; margin-top:.5rem; font-size: 1.1rem; font-weight: 600;}
   .mensaje{ margin:2rem 0; font-size:1.2rem; line-height:1.7; min-height:150px; }
 
-  /* --- Estilos para los botones --- */
+  /* --- (NUEVO) Estilos para los botones --- */
   .botones-container {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -83,6 +83,7 @@
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 15px rgba(0,0,0,.15);
   }
+  /* --- Fin de nuevos estilos --- */
 
   footer{text-align:center; margin:2rem 0; color:var(--rosa-fuerte); font-size:.9rem;}
 </style>
@@ -92,42 +93,41 @@
 
   <main>
     <section class="tarjeta">
-      <h1 id="titulo">Para mi Amor ❤️</h1>
+      <h1 id="titulo">Mi Amor </h1>
       
-      <div class="sub" id="subtitulo">Para la chica que ilumina todos mis días.</div>
+      <div class="sub" id="subtitulo">Eres el <strong>;</strong> (punto y coma) que le faltaba a mi código.</div>
 
       <div class="mensaje" id="mensaje">
-        <p>¡Hola, mi vida! Solo pasaba a dejarte unos recordatorios importantes:</p>
-        <p><strong>1.</strong> ¡La comida de hoy estaba <strong>ESPECTACULAR</strong>! En serio, cocinas demasiado rico, mi chef hermosa. 😋</p>
-        <p><strong>2.</strong> Quería pedirte disculpas por <strong>haber acabado</strong> tan rápido antes... 😅 A veces me gana la emoción, ¡es que me encantas!</p>
-        <p><strong>3.</strong> Eres la persona que me hace <strong>inmensamente feliz</strong>. Cada segundo contigo es mi momento favorito del día.</p>
-        <p>Gracias por ser tú. <strong>¡Te amo con todo mi corazón!</strong></p>
+        <p>Mi amor por ti es como un <strong>while(true)</strong>... ¡simplemente no termina!</p>
+        <p>Eres mi <strong>Error 404</strong>: Imposible de encontrar... ¡pero por suerte te encontré! 😍</p>
+        <p>Contigo, mi corazón no necesita <strong>// Comentarios</strong>, todo es claro y funcional.</p>
+        <p>Gracias por compilar mi vida y hacerla perfecta. <strong>¡Te amo!</strong> ❤️</p>
       </div>
 
       <div class="botones-container">
-        <button id="btn1">🥰</button>
-        <button id="btn2">😋</button>
-        <button id="btn3">💖</button>
+        <button id="btn1">💖</button>
+        <button id="btn2">🤔</button>
+        <button id="btn3">🔥</button>
       </div>
 
     </section>
   </main>
 
   <footer>
-    Hecho con 💖 · 2025
+    Hecho por Christian · 2025
   </footer>
 
-  <audio id="musica" loop>
-    <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Almost%20Bliss.mp3" type="audio/mpeg">
+  <audio id="musica" loop autoplay>
     <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/There%20is%20Romance.mp3" type="audio/mpeg">
     <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Heartwarming.mp3" type="audio/mpeg">
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Tu navegador no soporta el audio HTML5.
   </audio>
-  <script>
+
+<script>
   // --- Script de Emojis Cayendo ---
   const contenedor = document.getElementById("flores");
-  const emojis = ["🌸","💖","❤️","🌷","🍓","🥰", "✨", "😍", "👩‍🍳"]; 
+  const emojis = ["🌸","💖","❤️","🌷","🍓","🥰", "✨", "💻", "😍"];
   for(let i=0;i<60;i++){
     const span=document.createElement("span");
     span.className="flor";
@@ -139,37 +139,21 @@
     contenedor.appendChild(span);
   }
   
-  // --- Script de Botones Sorpresa (CON ARREGLO DE MÚSICA) ---
+  // --- (NUEVO) Script de Botones Sorpresa ---
   const btn1 = document.getElementById("btn1");
   const btn2 = document.getElementById("btn2");
   const btn3 = document.getElementById("btn3");
-  
-  // --- Lógica para la música ---
-  const musica = document.getElementById("musica");
-  let laMusicaHaComenzado = false;
-
-  function reproducirMusica() {
-    // Si la música no ha comenzado, dale play y marca que ya comenzó.
-    if (!laMusicaHaComenzado) {
-      musica.play();
-      laMusicaHaComenzado = true;
-    }
-  }
-  // --- Fin de la lógica de música ---
 
   btn1.addEventListener("click", () => {
-    reproducirMusica(); // <-- Se llama a la función de música
-    alert("Recordatorio Rápido:\n\nEres la mujer más hermosa del mundo mundial.\n\n(En serio, me encantas. 🥰)");
+    alert("¡Alerta de Amor!\n\nSe ha detectado un nivel de 'Te Amo' superior al 9000%.\n\n(Eres lo mejor que me ha pasado. 🥰)");
   });
 
   btn2.addEventListener("click", () => {
-    reproducirMusica(); // <-- Se llama a la función de música
-    alert("¡Recordatorio Gastronómico Urgente!\n\nLa comida de hoy estuvo 10/10. ¡DELICIOSA!\n\nGracias por ser la mejor cocinera (y la mejor novia) del mundo mundial. ❤️");
+    alert("Dato Curioso (y un poco nerd):\n\n¿Sabes por qué los programadores confunden Halloween con Navidad?\n\nPorque OCT 31 = DEC 25.\n\n... ¡Casi tan perfecto como nuestro 'match'!");
   });
 
   btn3.addEventListener("click", () => {
-    reproducirMusica(); // <-- Se llama a la función de música
-    alert("¡¡Mensaje SÚPER Importante!!\n\nMe haces el hombre más feliz del mundo.\n\nGracias mi amor, Te amo muchísimo. 💖");
+    alert("¡¡ADVERTENCIA DE SEGURIDAD!!\n\nHas activado el 'firewall' de mi corazón...\n\n... ¡pero tú tienes acceso de 'root' (súper administradora) para hacer lo que quieras! 🔥😉");
   });
 </script>
 </body>
